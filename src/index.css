@@ -746,3 +746,128 @@ a {
     flex-wrap: wrap;
   }
 }
+
+.events-page-minimal {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.events-stats-minimal {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border: 1px solid rgba(227, 30, 36, 0.18);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.events-stat-minimal {
+  padding: 18px 18px 14px;
+}
+
+.events-stat-minimal-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.events-stat-minimal-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.events-stat-minimal-value.danger {
+  color: var(--red);
+}
+
+.events-groups-minimal {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.events-group-minimal {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.events-group-minimal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.events-group-minimal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.events-group-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.events-group-dot.urgent {
+  background: #e31e24;
+}
+
+.events-group-dot.soon {
+  background: #d79a2b;
+}
+
+.events-group-dot.month {
+  background: #2f7de1;
+}
+
+.events-group-dot.later {
+  background: #8c8c8c;
+}
+
+.events-group-minimal-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.events-group-minimal-count {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: var(--text-muted);
+}
+
+.events-group-minimal-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.events-group-empty {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1200px) {
+  .events-stats-minimal {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .events-stats-minimal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .events-group-minimal-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
