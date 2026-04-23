@@ -1,3 +1,4 @@
+import PremiumSelect from "../components/ui/PremiumSelect";
 import { useMemo, useState } from "react";
 import {
   Search,
@@ -61,21 +62,6 @@ const blankForm = {
   status: "Active",
 };
 
-function PremiumSelect({ value, onChange, options = [] }) {
-  return (
-    <div className="premium-select-wrap">
-      <select className="premium-select" value={value} onChange={onChange}>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-      <span className="premium-select-arrow">⌄</span>
-    </div>
-  );
-}
-
 function StaffCard({
   member,
   isEditing,
@@ -133,7 +119,7 @@ function StaffCard({
             <label>Status</label>
             <PremiumSelect
               value={editForm.status}
-              onChange={(e) => onChange("status", e.target.value)}
+              onChange={(value) => onChange("status", value)}
               options={["Active", "Onboarding", "Inactive"]}
             />
           </div>
@@ -372,8 +358,8 @@ export default function Staff() {
             <label>Status</label>
             <PremiumSelect
               value={newMember.status}
-              onChange={(e) =>
-                setNewMember((prev) => ({ ...prev, status: e.target.value }))
+              onChange={(value) =>
+                setNewMember((prev) => ({ ...prev, status: value }))
               }
               options={["Active", "Onboarding", "Inactive"]}
             />
