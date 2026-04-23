@@ -61,7 +61,31 @@ const blankForm = {
   status: "Active",
 };
 
-function StaffCard({ member, isEditing, editForm, onEdit, onDelete, onChange, onSave, onCancel }) {
+function PremiumSelect({ value, onChange, options = [] }) {
+  return (
+    <div className="premium-select-wrap">
+      <select className="premium-select" value={value} onChange={onChange}>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      <span className="premium-select-arrow">⌄</span>
+    </div>
+  );
+}
+
+function StaffCard({
+  member,
+  isEditing,
+  editForm,
+  onEdit,
+  onDelete,
+  onChange,
+  onSave,
+  onCancel,
+}) {
   const initials = member.fullName
     .split(" ")
     .map((part) => part[0])
@@ -107,14 +131,11 @@ function StaffCard({ member, isEditing, editForm, onEdit, onDelete, onChange, on
 
           <div className="staff-field">
             <label>Status</label>
-            <select
+            <PremiumSelect
               value={editForm.status}
               onChange={(e) => onChange("status", e.target.value)}
-            >
-              <option>Active</option>
-              <option>Onboarding</option>
-              <option>Inactive</option>
-            </select>
+              options={["Active", "Onboarding", "Inactive"]}
+            />
           </div>
 
           <div className="staff-field">
@@ -349,16 +370,13 @@ export default function Staff() {
 
           <div className="staff-field">
             <label>Status</label>
-            <select
+            <PremiumSelect
               value={newMember.status}
               onChange={(e) =>
                 setNewMember((prev) => ({ ...prev, status: e.target.value }))
               }
-            >
-              <option>Active</option>
-              <option>Onboarding</option>
-              <option>Inactive</option>
-            </select>
+              options={["Active", "Onboarding", "Inactive"]}
+            />
           </div>
 
           <div className="staff-field">
