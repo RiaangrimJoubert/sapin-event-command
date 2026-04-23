@@ -1,27 +1,26 @@
 import {
   LayoutDashboard,
   CalendarDays,
-  CheckSquare,
   Users,
+  Handshake,
+  MessageSquareQuote,
+  BellRing,
+  Database,
   FileText,
-  Inbox,
-  CreditCard,
   BarChart3,
-  Plug,
   Settings,
-  HelpCircle,
 } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard, active: true },
   { label: "Events", icon: CalendarDays },
-  { label: "Tasks", icon: CheckSquare },
-  { label: "Vendors", icon: Users },
+  { label: "Staff", icon: Users },
+  { label: "Partners", icon: Handshake },
+  { label: "Testimonials", icon: MessageSquareQuote },
+  { label: "Chase Task", icon: BellRing },
+  { label: "Data", icon: Database },
   { label: "Templates", icon: FileText },
-  { label: "Inbox", icon: Inbox },
-  { label: "Payments", icon: CreditCard },
   { label: "Reports", icon: BarChart3 },
-  { label: "Integrations", icon: Plug },
 ];
 
 export default function Sidebar() {
@@ -45,7 +44,7 @@ export default function Sidebar() {
               className={`nav-item ${item.active ? "active" : ""}`}
               type="button"
             >
-              <Icon size={18} />
+              <Icon size={18} strokeWidth={2} />
               <span className="nav-item-label">{item.label}</span>
             </button>
           );
@@ -54,25 +53,10 @@ export default function Sidebar() {
 
       <div className="sidebar-spacer" />
 
-      <div className="upgrade-card">
-        <div className="upgrade-title">Upgrade reporting</div>
-        <div className="upgrade-copy">
-          Unlock advanced event insights, sponsor tracking, and region dashboards.
-        </div>
-        <button className="upgrade-btn" type="button">
-          Upgrade now
-        </button>
-      </div>
-
       <div className="sidebar-footer">
         <button className="nav-item" type="button">
-          <Settings size={18} />
+          <Settings size={18} strokeWidth={2} />
           <span className="nav-item-label">Settings</span>
-        </button>
-
-        <button className="nav-item" type="button">
-          <HelpCircle size={18} />
-          <span className="nav-item-label">Support</span>
         </button>
       </div>
     </aside>
