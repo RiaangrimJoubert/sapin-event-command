@@ -1,25 +1,27 @@
 :root {
-  --bg: #07131a;
-  --bg-soft: #0b1c24;
-  --panel: #0d1a22;
-  --panel-2: #10232d;
-  --card: rgba(255, 255, 255, 0.05);
-  --card-hover: rgba(255, 255, 255, 0.08);
+  --bg: #050505;
+  --bg-soft: #0d0d0d;
+  --panel: #111111;
+  --panel-2: #171717;
+
+  --card: rgba(255, 255, 255, 0.04);
+  --card-hover: rgba(255, 255, 255, 0.06);
+
   --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(120, 196, 189, 0.22);
+  --border-strong: rgba(227, 30, 36, 0.22);
 
-  --text: #f4f7fa;
-  --text-soft: #a5b4c0;
-  --text-muted: #7f95a2;
+  --text: #ffffff;
+  --text-soft: #d1d1d1;
+  --text-muted: #8e8e8e;
 
-  --teal: #2aa79b;
-  --teal-bright: #67e5d8;
-  --clay: #c96f4a;
-  --green: #90e56b;
-  --cyan: #3fc5d7;
-  --cyan-deep: #1b8e9b;
+  --red: #e31e24;
+  --red-soft: #ff4d4f;
+  --red-deep: #9f1418;
+  --red-glow: rgba(227, 30, 36, 0.18);
 
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --success: #4caf50;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
   --radius-xl: 24px;
   --radius-2xl: 30px;
   --radius-3xl: 36px;
@@ -57,9 +59,9 @@ a {
 .app-bg {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top right, rgba(42, 167, 155, 0.18), transparent 28%),
-    radial-gradient(circle at bottom left, rgba(201, 111, 74, 0.10), transparent 22%),
-    linear-gradient(135deg, #07131a 0%, #0a1a22 48%, #0b2028 100%);
+    radial-gradient(circle at top right, var(--red-glow), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.04), transparent 20%),
+    linear-gradient(135deg, #000000 0%, #080808 48%, #111111 100%);
   padding: 18px;
 }
 
@@ -67,7 +69,7 @@ a {
   max-width: 1600px;
   margin: 0 auto;
   min-height: calc(100vh - 36px);
-  background: rgba(0, 0, 0, 0.16);
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid var(--border);
   border-radius: var(--radius-3xl);
   box-shadow: var(--shadow);
@@ -83,7 +85,7 @@ a {
 }
 
 .sidebar {
-  background: linear-gradient(180deg, rgba(8, 25, 32, 0.98), rgba(5, 15, 22, 0.98));
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.98), rgba(4, 4, 4, 0.98));
   border: 1px solid var(--border);
   border-radius: var(--radius-2xl);
   padding: 18px;
@@ -92,7 +94,7 @@ a {
 }
 
 .main-panel {
-  background: linear-gradient(180deg, rgba(7, 21, 29, 0.96), rgba(10, 25, 34, 0.99));
+  background: linear-gradient(180deg, rgba(12, 12, 12, 0.96), rgba(18, 18, 18, 0.98));
   border: 1px solid var(--border);
   border-radius: var(--radius-2xl);
   padding: 18px;
@@ -112,12 +114,12 @@ a {
   width: 46px;
   height: 46px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--clay), var(--teal));
+  background: linear-gradient(135deg, var(--red), var(--red-deep));
   display: grid;
   place-items: center;
   font-weight: 800;
   color: #fff;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 12px 24px rgba(227, 30, 36, 0.18);
 }
 
 .brand-title {
@@ -157,9 +159,10 @@ a {
 }
 
 .nav-item.active {
-  background: linear-gradient(90deg, rgba(32, 77, 70, 0.95), rgba(24, 53, 60, 0.95));
-  color: #aef2e6;
+  background: linear-gradient(90deg, rgba(227, 30, 36, 0.16), rgba(90, 10, 12, 0.22));
+  color: #ffffff;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(227, 30, 36, 0.18);
 }
 
 .nav-item-label {
@@ -173,8 +176,8 @@ a {
 
 .upgrade-card {
   margin-top: 24px;
-  background: linear-gradient(135deg, rgba(20, 48, 57, 0.95), rgba(14, 37, 45, 0.98));
-  border: 1px solid rgba(42, 167, 155, 0.20);
+  background: linear-gradient(135deg, rgba(45, 8, 9, 0.95), rgba(22, 8, 8, 0.98));
+  border: 1px solid rgba(227, 30, 36, 0.22);
   border-radius: 24px;
   padding: 16px;
 }
@@ -197,10 +200,14 @@ a {
   border: 0;
   border-radius: 18px;
   padding: 12px 14px;
-  background: var(--teal-bright);
-  color: #082127;
+  background: var(--red);
+  color: #ffffff;
   font-weight: 800;
   cursor: pointer;
+}
+
+.upgrade-btn:hover {
+  background: var(--red-soft);
 }
 
 .sidebar-footer {
@@ -239,6 +246,11 @@ a {
   color: var(--text-muted);
 }
 
+.search-input:focus {
+  border-color: rgba(227, 30, 36, 0.4);
+  box-shadow: 0 0 0 3px rgba(227, 30, 36, 0.08);
+}
+
 .search-icon {
   position: absolute;
   left: 14px;
@@ -257,13 +269,17 @@ a {
   border: 0;
   border-radius: 18px;
   padding: 12px 16px;
-  background: var(--teal-bright);
-  color: #0a1f24;
+  background: var(--red);
+  color: #ffffff;
   font-weight: 800;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: var(--red-soft);
 }
 
 .icon-btn {
@@ -283,7 +299,7 @@ a {
   width: 9px;
   height: 9px;
   border-radius: 999px;
-  background: var(--clay);
+  background: var(--red);
   position: absolute;
   top: 11px;
   right: 11px;
@@ -303,7 +319,7 @@ a {
   width: 40px;
   height: 40px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--clay), var(--teal));
+  background: linear-gradient(135deg, var(--red), var(--red-deep));
   display: grid;
   place-items: center;
   color: white;
@@ -375,7 +391,7 @@ a {
 
 .card-link {
   font-size: 13px;
-  color: var(--teal-bright);
+  color: var(--red);
   font-weight: 700;
   cursor: pointer;
 }
@@ -396,7 +412,7 @@ a {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -405,10 +421,10 @@ a {
   width: 34px;
   height: 34px;
   border-radius: 12px;
-  background: rgba(103, 229, 216, 0.10);
+  background: rgba(227, 30, 36, 0.12);
   display: grid;
   place-items: center;
-  color: var(--teal-bright);
+  color: var(--red);
   flex-shrink: 0;
 }
 
@@ -421,7 +437,7 @@ a {
 
 .row-sub {
   font-size: 12px;
-  color: var(--teal-bright);
+  color: var(--red);
   margin-top: 4px;
 }
 
@@ -434,7 +450,7 @@ a {
 .text-link-small {
   margin-top: 16px;
   display: inline-block;
-  color: var(--teal-bright);
+  color: var(--red);
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
@@ -453,9 +469,9 @@ a {
   margin: 0 auto;
   border-radius: 50%;
   background: conic-gradient(
-    var(--green) 0 26%,
-    var(--cyan) 26% 78%,
-    var(--cyan-deep) 78% 100%
+    var(--red) 0 30%,
+    #ffffff 30% 68%,
+    #666666 68% 100%
   );
   position: relative;
 }
@@ -523,18 +539,18 @@ a {
 }
 
 .event-card.light {
-  background: linear-gradient(135deg, #6fe6d8, #46c6d0);
-  color: #092028;
+  background: linear-gradient(135deg, #e31e24, #9f1418);
+  color: #ffffff;
 }
 
 .event-card.teal {
-  background: linear-gradient(135deg, #1d7782, #145d67);
-  color: white;
+  background: linear-gradient(135deg, #2a2a2a, #161616);
+  color: #ffffff;
 }
 
 .event-card.green {
-  background: linear-gradient(135deg, #4b7c3a, #325a28);
-  color: white;
+  background: linear-gradient(135deg, #3a3a3a, #202020);
+  color: #ffffff;
 }
 
 .event-card-top {
@@ -553,7 +569,7 @@ a {
 .avatar-dot {
   width: 30px;
   height: 30px;
-  border: 2px solid rgba(255, 255, 255, 0.50);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.75);
   margin-left: -8px;
@@ -566,7 +582,7 @@ a {
 .event-badge {
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.12);
   font-size: 12px;
   font-weight: 700;
 }
@@ -586,7 +602,7 @@ a {
 .event-progress-track {
   height: 7px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.16);
+  background: rgba(255, 255, 255, 0.14);
   margin-top: 8px;
   overflow: hidden;
 }
@@ -620,7 +636,7 @@ a {
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: var(--green);
+  background: var(--red);
   margin-top: 6px;
   flex-shrink: 0;
 }
@@ -633,7 +649,7 @@ a {
 
 .alert-sub {
   font-size: 12px;
-  color: var(--teal-bright);
+  color: var(--red);
   margin-top: 4px;
 }
 
@@ -664,8 +680,8 @@ a {
   align-items: center;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(42, 167, 155, 0.12);
-  color: #9ceee4;
+  background: rgba(227, 30, 36, 0.14);
+  color: #ffffff;
   font-size: 12px;
   font-weight: 700;
 }
@@ -677,7 +693,7 @@ a {
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, 0.05);
-  color: var(--teal-bright);
+  color: var(--red);
 }
 
 .template-title {
